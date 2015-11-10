@@ -57,9 +57,13 @@
     CGFloat dy = point.y * sin(viewAngle);
     
     CGFloat angle = (dx + dy) / self.view.bounds.size.width;
-    
+
     // 倾斜视图
-    self.demoView.transform = CGAffineTransformRotate(self.demoView.transform, angle);
+    transform = CGAffineTransformRotate(transform, angle);
+    // 平移视图
+    transform.tx += 2 * (dx + dy);
+    
+    self.demoView.transform = transform;
     
     [recognizer setTranslation:CGPointZero inView:self.demoView];
 }
