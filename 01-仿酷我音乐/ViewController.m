@@ -35,14 +35,30 @@
 }
 
 /// 处理拖动手势
+/**
+ struct CGAffineTransform {
+     CGFloat a, b, c, d;
+     CGFloat tx, ty;
+ };
+ 
+ tx / ty 处理位移的
+ a / d 是处理缩放比例的
+ a / b / c / d 共同处理旋转角度的
+ */
 - (void)panGesture:(UIPanGestureRecognizer *)recognizer {
     
     CGPoint point = [recognizer translationInView:self.demoView];
     
-    NSLog(@"%@", NSStringFromCGPoint(point));
+    CGAffineTransform transform = self.demoView.transform;
 
+    CGFloat viewAngle = atan2(transform.b, transform.a);
+    
+    CGFloat dx = point.x * cos(viewAngle);
+    CGFloat dy = point.y * sin(viewAngle);
+    
+    CGFloat angle = (dx + dy) / self.view.bounds.size.width;
+    
     // 倾斜视图
-    CGFloat angle = point.x / self.view.bounds.size.width * M_PI_2;
     self.demoView.transform = CGAffineTransformRotate(self.demoView.transform, angle);
     
     [recognizer setTranslation:CGPointZero inView:self.demoView];
