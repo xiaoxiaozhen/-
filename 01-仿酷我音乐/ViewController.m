@@ -7,31 +7,59 @@
 //
 
 #import "ViewController.h"
+#import "PlayerViewController.h"
+#import "RotateTransitionDelegate.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) UIView *demoView;
+/// 旋转转场动画代理，提供转场动画的对象
+@property (nonatomic, strong) RotateTransitionDelegate *rotateDelegate;
 @end
 
 @implementation ViewController
+
+- (RotateTransitionDelegate *)rotateDelegate {
+    if (_rotateDelegate == nil) {
+        _rotateDelegate = [[RotateTransitionDelegate alloc] init];
+    }
+    return _rotateDelegate;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor orangeColor];
 
-    self.demoView = [[UIView alloc] init];
-    self.demoView.backgroundColor = [UIColor whiteColor];
+//    self.demoView = [[UIView alloc] init];
+//    self.demoView.backgroundColor = [UIColor whiteColor];
+//    
+//    // 设置定位点，注意：一定要设置完定位点之后，再设置 frame
+//    self.demoView.layer.anchorPoint = CGPointMake(0.5, 1.0);
+//    // 设置视图位置
+//    self.demoView.frame = self.view.bounds;
+//    
+//    [self.view addSubview:self.demoView];
+//
+//    // 添加手势识别
+//    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGesture:)];
+//    [self.demoView addGestureRecognizer:pan];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    // 设置定位点，注意：一定要设置完定位点之后，再设置 frame
-    self.demoView.layer.anchorPoint = CGPointMake(0.5, 1.0);
-    // 设置视图位置
-    self.demoView.frame = self.view.bounds;
+    if (![segue.destinationViewController isKindOfClass:[PlayerViewController class]]) {
+        return;
+    }
     
-    [self.view addSubview:self.demoView];
+    // 设置 modal 转场类型
+    PlayerViewController *vc = segue.destinationViewController;
     
-    // 添加手势识别
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGesture:)];
-    [self.demoView addGestureRecognizer:pan];
+    vc.modalPresentationStyle = UIModalPresentationCustom;
+    
+    // 设置转场(转换场景)动画代理
+    vc.transitioningDelegate = self.rotateDelegate;
+
+    NSLog(@"come here");
 }
 
 /// 处理拖动手势

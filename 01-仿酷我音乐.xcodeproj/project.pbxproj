@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C25AA11C1BF2EBB0007E4203 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25AA11B1BF2EBB0007E4203 /* PlayerViewController.m */; };
+		C25AA11F1BF2F141007E4203 /* RotateTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C25AA11E1BF2F141007E4203 /* RotateTransitionDelegate.m */; };
 		C2B9CDDF1BF23ECF00AF0AF9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B9CDDE1BF23ECF00AF0AF9 /* main.m */; };
 		C2B9CDE21BF23ECF00AF0AF9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B9CDE11BF23ECF00AF0AF9 /* AppDelegate.m */; };
 		C2B9CDE51BF23ECF00AF0AF9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B9CDE41BF23ECF00AF0AF9 /* ViewController.m */; };
@@ -16,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C25AA11A1BF2EBB0007E4203 /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
+		C25AA11B1BF2EBB0007E4203 /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
+		C25AA11D1BF2F141007E4203 /* RotateTransitionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotateTransitionDelegate.h; sourceTree = "<group>"; };
+		C25AA11E1BF2F141007E4203 /* RotateTransitionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotateTransitionDelegate.m; sourceTree = "<group>"; };
 		C2B9CDDA1BF23ECF00AF0AF9 /* 01-仿酷我音乐.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "01-仿酷我音乐.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2B9CDDE1BF23ECF00AF0AF9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C2B9CDE01BF23ECF00AF0AF9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -62,6 +68,10 @@
 				C2B9CDE11BF23ECF00AF0AF9 /* AppDelegate.m */,
 				C2B9CDE31BF23ECF00AF0AF9 /* ViewController.h */,
 				C2B9CDE41BF23ECF00AF0AF9 /* ViewController.m */,
+				C25AA11D1BF2F141007E4203 /* RotateTransitionDelegate.h */,
+				C25AA11E1BF2F141007E4203 /* RotateTransitionDelegate.m */,
+				C25AA11A1BF2EBB0007E4203 /* PlayerViewController.h */,
+				C25AA11B1BF2EBB0007E4203 /* PlayerViewController.m */,
 				C2B9CDE61BF23ECF00AF0AF9 /* Main.storyboard */,
 				C2B9CDE91BF23ECF00AF0AF9 /* Assets.xcassets */,
 				C2B9CDEB1BF23ECF00AF0AF9 /* LaunchScreen.storyboard */,
@@ -150,6 +160,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2B9CDE51BF23ECF00AF0AF9 /* ViewController.m in Sources */,
+				C25AA11F1BF2F141007E4203 /* RotateTransitionDelegate.m in Sources */,
+				C25AA11C1BF2EBB0007E4203 /* PlayerViewController.m in Sources */,
 				C2B9CDE21BF23ECF00AF0AF9 /* AppDelegate.m in Sources */,
 				C2B9CDDF1BF23ECF00AF0AF9 /* main.m in Sources */,
 			);
@@ -298,6 +310,7 @@
 				C2B9CDF31BF23ECF00AF0AF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
